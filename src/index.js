@@ -1,6 +1,6 @@
-import { app, BrowserWindow } from 'electron';
-import path from 'node:path';
-import started from 'electron-squirrel-startup';
+const { app, BrowserWindow } = require('electron')
+const path  = require('path');
+const { started } = require('electron-squirrel-startup');
 
 if (started) {
   app.quit();
@@ -15,7 +15,7 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, 'src/index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'app/index.html'));
 };
 
 app.whenReady().then(() => {
